@@ -118,6 +118,13 @@ img[src$="svg"] {
   width: 200px;
 }
 
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  background: var(--trust-us-beige);
+  width: 100vw;
+}
+
 .panel {
   display: flex;
   flex-direction: column;
@@ -145,6 +152,9 @@ img[src$="svg"] {
 .hero {
   position: relative;
   align-self: stretch;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero img {
@@ -153,8 +163,8 @@ img[src$="svg"] {
 
 .hero div {
   position: absolute;
-  bottom: 15rem;
-  left: 35rem;
+  /* bottom: 15rem; */
+  /* left: 35rem; */
   text-shadow: 5px 5px 5px var(--calming-whisper);
   display: flex;
   flex-direction: column;
@@ -178,6 +188,7 @@ img[src$="svg"] {
   margin-bottom: 5rem;
   display: flex;
   gap: 1rem;
+  /* transform: rotate(5deg); */
 }
 
 .card {
