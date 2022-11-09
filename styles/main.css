@@ -1,0 +1,261 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --pine-shadows: #4e5a40;
+  --dark-mystery: #2c242a;
+  --soothing-sage: #8e9d88;
+  --calming-whisper: #84a9a1;
+  --trust-us-beige: #e8e5ce;
+}
+
+body {
+  margin: 0;
+  color: var(--trust-us-beige);
+  font-family: "Lexend", sans-serif;
+  background-color: var(--pine-shadows);
+  line-height: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main {
+  margin: 0 auto;
+  padding: 0 1rem;
+  max-width: 50rem;
+}
+
+aside {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+footer {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+h1 {
+  color: var(--trust-us-beige);
+  font-family: "Alegreya Sans", sans-serif;
+  font-weight: bold;
+  line-height: 1rem;
+  margin-bottom: 5rem;
+  font-size: 3rem;
+}
+
+h2 {
+  color: var(--trust-us-beige);
+  font-family: "Alegreya Sans", sans-serif;
+  line-height: 1rem;
+  margin-top: 3rem;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+h3 {
+  color: var(--trust-us-beige);
+  font-family: "Alegreya Sans", sans-serif;
+  line-height: 1rem;
+  font-size: 1.5rem;
+  text-decoration: underline;
+}
+
+h1,
+h2 {
+  letter-spacing: 0.25rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--calming-whisper);
+}
+
+a[href]:hover {
+  color: var(--dark-mystery);
+}
+
+main {
+  margin-bottom: 5rem;
+}
+
+article {
+  margin-bottom: 5rem;
+}
+
+figure {
+  margin-top: 3rem;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  max-width: 600px;
+  display: block;
+}
+
+picture img {
+  max-width: none;
+}
+
+svg {
+  width: 200px;
+}
+
+/* temp fix to size about img */
+img[srcset] {
+  width: 50%;
+  height: auto;
+  margin: 2rem auto;
+}
+
+/* temporary fix to size svg images */
+img[src$="svg"] {
+  width: 200px;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.image-wrapper {
+  order: -1;
+}
+
+.button {
+  color: var(--trust-us-beige);
+  padding: 1rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  background-color: var(--calming-whisper);
+  margin: 1rem;
+  display: inline-block;
+}
+
+.button:hover {
+  background-color: var(--dark-mystery);
+  transition: background-color 300ms ease;
+}
+
+.hero {
+  position: relative;
+  align-self: stretch;
+}
+
+.hero img {
+  filter: sepia(80%) brightness(75%);
+}
+
+.hero div {
+  position: absolute;
+  bottom: 15rem;
+  left: 35rem;
+  text-shadow: 5px 5px 5px var(--calming-whisper);
+  display: flex;
+  flex-direction: column;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 2rem;
+  margin: 0;
+}
+
+.cardintro {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.cards {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  display: flex;
+  margin-bottom: 5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.card {
+  flex: 1 1 0;
+  text-align: center;
+  background-color: var(--soothing-sage);
+  color: var(--trust-us-beige);
+  transition: background-color 300ms ease, color 300ms ease;
+}
+
+.card img {
+  transition: filter 300ms ease;
+}
+
+.card:hover img {
+  filter: invert(75%);
+}
+
+.card:hover {
+  color: var(--dark-mystery);
+  background-color: var(--calming-whisper);
+  cursor: pointer;
+}
+
+@media (min-width: 600px) {
+  .cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .card {
+    flex: 0 1 40%;
+  }
+}
+
+@media (min-width: 850px) {
+  .cards {
+    /*     flex-wrap: nowrap; */
+  }
+  .card {
+    flex: 1 1;
+  }
+}
+
+@media (max-width: 550px) {
+  .cards {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .card {
+    flex: 0 1 20%;
+  }
+
+  h1,
+  h2,
+  h3 {
+    line-height: 2rem;
+  }
+}
+
+@media (min-width: 401px) {
+  /* tablet CSS */
+  .panel {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .image-wrapper {
+    flex: 1 1 30%;
+  }
+
+  .text-content {
+    flex: 1 1 70%;
+  }
+}
+
+@media (min-width: 801px) {
+  /* desktop CSS */
+}
