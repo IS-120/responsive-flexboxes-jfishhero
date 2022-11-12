@@ -8,6 +8,7 @@
   --soothing-sage: #8e9d88;
   --calming-whisper: #84a9a1;
   --trust-us-beige: #e8e5ce;
+  --gutter: 1rem;
 }
 
 body {
@@ -79,6 +80,15 @@ a[href]:hover {
   color: var(--dark-mystery);
 }
 
+a[href]:active {
+  color: var(--dark-mystery);
+  text-shadow: 5px 5px 5px var(--calming-whisper);
+}
+
+a:not([href]) {
+  color: var(--dark-mystery);
+}
+
 main {
   margin-bottom: 5rem;
 }
@@ -94,7 +104,6 @@ figure {
 img {
   width: 100%;
   height: auto;
-  max-width: 600px;
   display: block;
 }
 
@@ -123,6 +132,25 @@ nav ul {
   justify-content: space-around;
   background: var(--trust-us-beige);
   width: 100vw;
+  margin-top: 0;
+  margin-bottom: 5rem;
+  list-style: none;
+}
+
+nav ul li a {
+  display: inline-block;
+  padding: 1.5rem;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 2rem;
+}
+
+header {
+  align-self: stretch;
+  max-width: 50rem;
 }
 
 .panel {
@@ -132,6 +160,8 @@ nav ul {
 
 .image-wrapper {
   order: -1;
+  width: 100%;
+  object-fit: cover;
 }
 
 .button {
@@ -141,12 +171,14 @@ nav ul {
   text-transform: uppercase;
   background-color: var(--calming-whisper);
   margin: 1rem;
+  margin-left: 0;
   display: inline-block;
 }
 
 .button:hover {
   background-color: var(--dark-mystery);
   transition: background-color 300ms ease;
+  color: var(--trust-us-beige);
 }
 
 .hero {
@@ -168,10 +200,12 @@ nav ul {
   text-shadow: 5px 5px 5px var(--calming-whisper);
   display: flex;
   flex-direction: column;
+  margin: var(--gutter);
+  padding: var(--gutter);
 }
 
 .hero h1 {
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(1rem, 4vw, 3rem);
   line-height: 2rem;
   margin: 0;
 }
@@ -184,15 +218,18 @@ nav ul {
 .cards {
   margin-left: 1rem;
   margin-right: 1rem;
-  display: flex;
   margin-bottom: 5rem;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   gap: 1rem;
+
   /* transform: rotate(5deg); */
 }
 
 .card {
   flex: 1 1 0;
+  flex: 0 1 20%;
   text-align: center;
   background-color: var(--soothing-sage);
   color: var(--trust-us-beige);
@@ -213,7 +250,30 @@ nav ul {
   cursor: pointer;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 401px) {
+  /* tablet CSS */
+  .text-content h2 {
+    margin-top: 0;
+  }
+
+  .panel {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .image-wrapper {
+    flex: 1 1 50%;
+    order: 1;
+  }
+
+  .left {
+    order: -1;
+  }
+
+  .text-content {
+    flex: 1 1 50%;
+  }
+
   .cards {
     flex-direction: row;
     flex-wrap: wrap;
@@ -225,16 +285,17 @@ nav ul {
   }
 }
 
-@media (min-width: 850px) {
+@media (min-width: 801px) {
+  /* desktop CSS */
   .cards {
-    /*     flex-wrap: nowrap; */
   }
   .card {
     flex: 1 1;
+    flex: 1 1 0;
   }
 }
 
-@media (max-width: 550px) {
+/* @media (max-width: 550px) {
   .cards {
     flex-direction: column;
     justify-content: center;
@@ -249,24 +310,4 @@ nav ul {
   h3 {
     line-height: 2rem;
   }
-}
-
-@media (min-width: 401px) {
-  /* tablet CSS */
-  .panel {
-    flex-direction: row;
-    gap: 1rem;
-  }
-
-  .image-wrapper {
-    flex: 1 1 30%;
-  }
-
-  .text-content {
-    flex: 1 1 70%;
-  }
-}
-
-@media (min-width: 801px) {
-  /* desktop CSS */
-}
+} */
